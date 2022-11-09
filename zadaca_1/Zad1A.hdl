@@ -1,0 +1,8 @@
+CHIP Zad1A {
+    IN x, y;
+    OUT out;
+
+    PARTS:
+    And(a = x, b = y, out = and);
+    Not(in = and, out = out);
+}
