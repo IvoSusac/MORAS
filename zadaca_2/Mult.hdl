@@ -1,0 +1,134 @@
+CHIP Mult {
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    And16(a = a, b = false, out = zeros);
+
+    Mux16(a = zeros, b = a, sel = b[0], out = out1);
+    Mux16(a = zeros, b = a, sel = b[1], out = out2);
+
+    BitShiftL(in = out2, out = shift1);
+
+    Mux16(a = zeros, b = a, sel = b[2], out = out3);
+
+    Mult4(in = out3, out = shift2);
+
+    Mux16(a = zeros, b = a, sel = b[3], out = out4);
+
+    BitShiftL(in = out4, out = shift3);
+    BitShiftL(in = shift3, out = shift4);
+    BitShiftL(in = shift4, out = shift5);
+
+    Mux16(a = zeros, b = a, sel = b[4], out = out5);
+
+    Mult4(in = out5, out = shift6);
+    Mult4(in = shift6, out = shift7);
+
+    Mux16(a = zeros, b = a, sel = b[5], out = out6);
+
+    Mult4(in = out6, out = shift8);
+    Mult4(in = shift8, out = shift9);
+    BitShiftL(in = shift9, out = shift10);
+
+    Mux16(a = zeros, b = a, sel = b[6], out = out7);
+
+    Mult4(in = out7, out = shift11);
+    Mult4(in = shift11, out = shift12);
+    Mult4(in = shift12, out = shift13);
+
+    Mux16(a = zeros, b = a, sel = b[7], out = out8);
+
+    Mult4(in = out8, out = shift14);
+    Mult4(in = shift14, out = shift15);
+    Mult4(in = shift15, out = shift16);
+    BitShiftL(in = shift16, out = shift17);
+
+    Mux16(a = zeros, b = a, sel = b[8], out = out9);
+
+    Mult4(in = out9, out = shift18);
+    Mult4(in = shift18, out = shift19);
+    Mult4(in = shift19, out = shift20);
+    Mult4(in = shift20, out = shift21);
+
+    Mux16(a = zeros, b = a, sel = b[9], out = out10);
+
+    Mult4(in = out10, out = shift22);
+    Mult4(in = shift22, out = shift23);
+    Mult4(in = shift23, out = shift24);
+    Mult4(in = shift24, out = shift25);
+    BitShiftL(in = shift25, out = shift26);
+
+    Mux16(a = zeros, b = a, sel = b[10], out = out11);
+
+    Mult4(in = out11, out = shift27);
+    Mult4(in = shift27, out = shift28);
+    Mult4(in = shift28, out = shift29);
+    Mult4(in = shift29, out = shift30);
+    Mult4(in = shift30, out = shift31);
+
+    Mux16(a = zeros, b = a, sel = b[11], out = out12);
+
+    Mult4(in = out12, out = shift32);
+    Mult4(in = shift32, out = shift33);
+    Mult4(in = shift33, out = shift34);
+    Mult4(in = shift34, out = shift35);
+    Mult4(in = shift35, out = shift36);
+    BitShiftL(in = shift36, out = shift37);
+
+    Mux16(a = zeros, b = a, sel = b[12], out = out13);
+
+    Mult4(in = out13, out = shift38);
+    Mult4(in = shift38, out = shift39);
+    Mult4(in = shift39, out = shift40);
+    Mult4(in = shift40, out = shift41);
+    Mult4(in = shift41, out = shift42);
+    Mult4(in = shift42, out = shift43);
+
+    Mux16(a = zeros, b = a, sel = b[13], out = out14);
+
+    Mult4(in = out14, out = shift44);
+    Mult4(in = shift44, out = shift45);
+    Mult4(in = shift45, out = shift46);
+    Mult4(in = shift46, out = shift47);
+    Mult4(in = shift47, out = shift48);
+    Mult4(in = shift48, out = shift49);
+    BitShiftL(in = shift49, out = shift50);
+
+    Mux16(a = zeros, b = a, sel = b[14], out = out15);
+
+    Mult4(in = out15, out = shift51);
+    Mult4(in = shift51, out = shift52);
+    Mult4(in = shift52, out = shift53);
+    Mult4(in = shift53, out = shift54);
+    Mult4(in = shift54, out = shift55);
+    Mult4(in = shift55, out = shift56);
+    Mult4(in = shift56, out = shift57);
+
+    Mux16(a = zeros, b = a, sel = b[15], out = out16);
+
+    Mult4(in = out16, out = shift58);
+    Mult4(in = shift58, out = shift59);
+    Mult4(in = shift59, out = shift60);
+    Mult4(in = shift60, out = shift61);
+    Mult4(in = shift61, out = shift62);
+    Mult4(in = shift62, out = shift63);
+    Mult4(in = shift63, out = shift64);
+    BitShiftL(in = shift64, out = shift65);
+
+    Add16(a = out1, b = shift1, out = add1);
+    Add16(a = add1, b = shift2, out = add2);
+    Add16(a = add2, b = shift5, out = add3);
+    Add16(a = add3, b = shift7, out = add4);
+    Add16(a = add4, b = shift10, out = add5);
+    Add16(a = add5, b = shift13, out = add6);
+    Add16(a = add6, b = shift17, out = add7);
+    Add16(a = add7, b = shift21, out = add8);
+    Add16(a = add8, b = shift26, out = add9);
+    Add16(a = add9, b = shift31, out = add10);
+    Add16(a = add10, b = shift37, out = add11);
+    Add16(a = add11, b = shift43, out = add12);
+    Add16(a = add12, b = shift50, out = add13);
+    Add16(a = add13, b = shift57, out = add14);
+    Add16(a = add14, b = shift65, out = out);
+}

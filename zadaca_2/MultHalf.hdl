@@ -1,0 +1,19 @@
+CHIP MultHalf {
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    // xor za predznak
+    Xor(a = a[15], b = b[15], out = out[15]);
+    
+    // karakteristika je eksponent + 15, pa ako zbrajamo dva eksponenta moramo oduzeti jedan 15 (zbrojiti s dvojnim komplementom od 15)
+    Add16(a[10..14] = a[10..14], a[0..9] = false, a[15] = false, b[10..14] = b[10..14], b[0..9] = false, b[15] = false, out = out1);
+    Add16(a = out1, b[0..9] = false, b[10] = true, b[11..13] = false, b[14] = true, b[15] = false, out[10..14] = out[10..14], out[15] = null, out[0..9] = null2);
+
+    // mnozimo mantise
+    Mult(a[0..9] = a[0..9], b[0..9] = b[0..9], a[10..15] = false, b[10..15] = false, out[6..15] = out[0..9], out[0..5] = null3);
+    
+    
+    
+
+}
