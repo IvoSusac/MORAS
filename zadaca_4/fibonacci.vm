@@ -1,0 +1,23 @@
+function Fibonacci 1
+
+push argument 0
+push constant 2
+lt
+if-goto BASE
+
+push argument 0
+push constant 2
+sub
+call fibonacci.Fibonacci 1
+
+push argument 0
+push constant 1
+sub
+call fibonacci.Fibonacci 1
+
+add
+return
+
+label BASE
+push argument 0
+return

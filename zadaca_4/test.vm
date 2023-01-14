@@ -1,0 +1,5 @@
+push constant 13
+push constant 7
+push constant 12
+pop local 5
+add

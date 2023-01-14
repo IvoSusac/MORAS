@@ -1,0 +1,16 @@
+function Sum 1
+	push argument 0
+	push constant 1
+	sub
+	pop local 0
+	push local 0
+	if-goto TRUE
+		push argument 0
+		push local 0
+		call sum.Sum 1
+		add
+		goto END
+	label TRUE
+		push constant 0
+	label END
+		return

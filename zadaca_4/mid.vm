@@ -1,0 +1,49 @@
+function Mid 3
+
+push argument 0
+push argument 1
+gt 
+if-goto agtb
+
+push argument 1
+push argument 2
+gt
+if-goto bgtc
+
+push argument 1 
+return
+
+label agtb
+push argument 0
+push argument 2
+gt
+if-goto agtc
+
+push argument 0
+return
+
+label bgtc
+push argument 0
+push argument 2
+gt
+if-goto reta
+
+push argument 2
+return
+
+label agtc
+push argument 1 
+push argument 2
+gt
+if-goto retb
+
+push argument 2
+return
+
+label reta
+push argument 0
+return
+
+label retb
+push argument 1
+return

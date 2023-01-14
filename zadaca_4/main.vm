@@ -1,0 +1,28 @@
+sp
+call main.Main 0
+ep
+
+function Main 0
+	push constant 9
+	push constant 6
+	push constant 3
+	call mid.Mid 3
+	
+	push constant 5
+	call fibonacci.Fibonacci 1
+	
+	push constant 5
+	push constant 2
+	call div.Div 2
+	
+	push constant 5
+	push constant 2
+	call mod.Mod 2
+	
+	push constant 100
+	push constant 10
+	push constant 6
+	call BS.search 3
+	
+	label END
+	goto END
