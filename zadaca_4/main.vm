@@ -3,6 +3,7 @@ call main.Main 0
 ep
 
 function Main 0
+
 	push constant 9
 	push constant 6
 	push constant 3
@@ -24,28 +25,28 @@ function Main 0
 	pop static 3
 
 	push constant 100
-    pop pointer 1
-    push constant 2
-    pop that 0
-    push constant 3
-    pop that 1
-    push constant 4
-    pop that 2
-    push constant 6
-    pop that 3
-    push constant 7
-    pop that 4
-    push constant 8
-    pop that 5
-    push constant 9
-    pop that 6
-    push constant 100
-    push constant 7
-    push constant 4
-    call BS.search 3
-    pop static 4
+	pop pointer 1
+	push constant 2
+	pop that 0
+	push constant 3
+	pop that 1
+	push constant 4
+	pop that 2
+	push constant 6
+	pop that 3
+	push constant 7
+	pop that 4
+	push constant 8
+	pop that 5
+	push constant 9
+	pop that 6
+	push constant 100
+	push constant 7
+	push constant 4
+	call BS.search 3
+	pop static 4
 
-    return
+	return
 
 	label END
 	goto END
