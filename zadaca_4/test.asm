@@ -118,6 +118,12 @@ M=D
 @mid.Mid
 0;JMP
 (mid.Mid$ret1)
+//pop static 0
+@SP
+AM=M-1
+D=M
+@main.0
+M=D
 //push constant 5
 @5
 D=A
@@ -169,6 +175,12 @@ M=D
 @fibonacci.Fibonacci
 0;JMP
 (fibonacci.Fibonacci$ret2)
+//pop static 1
+@SP
+AM=M-1
+D=M
+@main.1
+M=D
 //push constant 5
 @5
 D=A
@@ -227,6 +239,12 @@ M=D
 @div.Div
 0;JMP
 (div.Div$ret3)
+//pop static 2
+@SP
+AM=M-1
+D=M
+@main.2
+M=D
 //push constant 5
 @5
 D=A
@@ -285,6 +303,12 @@ M=D
 @mod.Mod
 0;JMP
 (mod.Mod$ret4)
+//pop static 3
+@SP
+AM=M-1
+D=M
+@main.3
+M=D
 //push constant 100
 @100
 D=A
@@ -292,15 +316,168 @@ D=A
 M=M+1
 A=M-1
 M=D
-//push constant 10
-@10
+//pop pointer 1
+@SP
+AM=M-1
+D=M
+@4
+M=D
+//push constant 2
+@2
 D=A
 @SP
 M=M+1
 A=M-1
 M=D
+//pop that 0
+@0
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
+//push constant 3
+@3
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//pop that 1
+@1
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
+//push constant 4
+@4
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//pop that 2
+@2
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
 //push constant 6
 @6
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//pop that 3
+@3
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
+//push constant 7
+@7
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//pop that 4
+@4
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
+//push constant 8
+@8
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//pop that 5
+@5
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
+//push constant 9
+@9
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//pop that 6
+@6
+D=A
+@THAT
+D=D+M
+@R15
+M=D
+@SP
+AM=M-1
+D=M
+@R15
+A=M
+M=D
+//push constant 100
+@100
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//push constant 7
+@7
+D=A
+@SP
+M=M+1
+A=M-1
+M=D
+//push constant 4
+@4
 D=A
 @SP
 M=M+1
@@ -350,6 +527,57 @@ M=D
 @BS.search
 0;JMP
 (BS.search$ret5)
+//pop static 4
+@SP
+AM=M-1
+D=M
+@main.4
+M=D
+//return
+@LCL
+D=M
+@R15
+M=D
+@5
+D=A
+@R15
+A=M-D
+D=M
+@R14
+M=D
+@SP
+AM=M-1
+D=M
+@ARG
+A=M
+M=D
+@ARG
+D=M+1
+@SP
+M=D
+@R15
+AM=M-1
+D=M
+@THAT
+M=D
+@R15
+AM=M-1
+D=M
+@THIS
+M=D
+@R15
+AM=M-1
+D=M
+@ARG
+M=D
+@R15
+AM=M-1
+D=M
+@LCL
+M=D
+@R14
+A=M
+0;JMP
 //label END
 (main.Main$END)
 //goto END
