@@ -1,0 +1,58 @@
+function Main.main 1
+push constant 5
+call Array.new 1
+pop local 0
+push constant 0
+push local 0
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 10
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push local 0
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push local 0
+add
+push constant 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 0
+push constant 4
+call QuickSort.sort 3
+pop temp 0
+push local 0
+push constant 5
+call QuickSort.printArray 2
+pop temp 0
+push local 0
+call Array.dispose 1
+pop temp 0
+push constant 0
+return

@@ -1,0 +1,149 @@
+class Vint {
+
+    field int capacity;
+    field Array vector;
+
+    function int base_2_pow(int n) {
+        var int prod, i;
+
+        let prod = 1;
+
+        while (i < n) {
+            let prod = prod * 2;
+            let i = i + 1;
+        }
+
+        return prod;
+    }
+
+    constructor Vint new(int n) {
+        if (n < 0) {
+            let capacity = 1;
+        }
+        else {
+            let capacity = Vint.base_2_pow(n);
+        }
+
+        let vector = Array.new(capacity);
+
+        return this;
+    }
+
+    method int len() {
+        return capacity;
+    }
+
+    method void set(int k, int v) {
+        if ((k < capacity) & (k > -1)) {
+            let vector[k] = v;
+
+            return;
+        }
+
+        do Output.printString("Error in method set : array index out of range");
+        do Output.println();
+
+        return;
+    }
+
+    method int get(int k) {
+        if ((k < capacity) & (k > -1)) {
+            return vector[k];
+        }
+
+        do Output.printString("Error in method get : array index out of range");
+        do Output.println();
+
+        return -1;
+    }
+
+    method void resize(int m) {
+        var int min_i, i;
+        var Array temp;
+
+        if (m < 0) {
+            do vector.dispose();
+            let capacity = 1;
+            let vector = Array.new(capacity);
+            
+            return;
+        }
+
+        let min_i = Math.min(capacity, Vint.base_2_pow(m));
+
+        let temp = Array.new(Vint.base_2_pow(m));
+
+        while (i < min_i) {
+            let temp[i] = vector[i];
+            let i = i + 1;
+        }
+
+        do vector.dispose();
+        let capacity = Vint.base_2_pow(m);
+        let vector = temp;
+
+        return;
+    }
+
+    function bool is_eq(Vint a, Vint b) {
+        var int i;
+
+        if (~(a.len() = b.len())) {
+            return false;
+        }
+
+        while (i < a.len()) {
+            if (~(a.get(i) = b.get(i))) {
+                return false;
+            }
+
+            let i = i + 1;
+        }
+
+        return true;
+    }
+
+    method Array getVec() {
+        return vector;
+    }
+
+    function bool elems(Vint a, Vint b) {
+        var Array a1, b1;
+        var int i;
+
+        if (a.len() = b.len()) {
+            let a1 = a.getVec();
+            let b1 = b.getVec();
+
+            do QuickSort.sort(a1, 0, a.len() - 1);
+            do QuickSort.sort(b1, 0, b.len() - 1);
+
+            while (i < a.len()) {
+                if (~(a1[i] = b1[i])) {
+                    return false;
+                }
+
+                let i = i + 1;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    method void printVec() {
+        var int i;
+
+        while (i < capacity) {
+            do Output.printInt(vector[i]);
+            do Output.printString(" ");
+
+            let i = i + 1;
+        }
+
+        do Output.println();
+
+        return;
+    }
+}

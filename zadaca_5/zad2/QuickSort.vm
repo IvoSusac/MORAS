@@ -1,0 +1,150 @@
+function QuickSort.swap 1
+push argument 1
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push argument 1
+push argument 0
+add
+push argument 2
+push argument 0
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 2
+push argument 0
+add
+push local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function QuickSort.printArray 1
+label WHILE_EXP0
+push local 0
+push argument 1
+lt
+not
+if-goto WHILE_END0
+push local 0
+push argument 0
+add
+pop pointer 1
+push that 0
+call Output.printInt 1
+pop temp 0
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function QuickSort.partition 3
+push argument 1
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 0
+push argument 1
+pop local 1
+push argument 1
+push constant 1
+add
+pop local 2
+label WHILE_EXP0
+push local 2
+push argument 2
+lt
+push local 2
+push argument 2
+eq
+or
+not
+if-goto WHILE_END0
+push local 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 0
+lt
+push local 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 0
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 1
+push constant 1
+add
+pop local 1
+push argument 0
+push local 1
+push local 2
+call QuickSort.swap 3
+pop temp 0
+label IF_FALSE0
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP0
+label WHILE_END0
+push argument 0
+push local 1
+push argument 1
+call QuickSort.swap 3
+pop temp 0
+push local 1
+return
+function QuickSort.sort 1
+push argument 1
+push argument 2
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+push argument 1
+push argument 2
+call QuickSort.partition 3
+pop local 0
+push argument 0
+push argument 1
+push local 0
+push constant 1
+sub
+call QuickSort.sort 3
+pop temp 0
+push argument 0
+push local 0
+push constant 1
+add
+push argument 2
+call QuickSort.sort 3
+pop temp 0
+label IF_FALSE0
+push constant 0
+return

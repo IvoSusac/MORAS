@@ -1,0 +1,45 @@
+class Graph {
+
+    function int f (int x) {
+        return ((x * x) + 5);
+    }
+
+    function void draw() {
+        var int x, i, f_x;
+        var Array X, Y;
+
+        do Screen.drawLine(0, 128, 255, 128);
+        do Screen.drawLine(128, 0, 128, 255);
+
+        let X = Array.new(65);
+        let Y = Array.new(65);
+
+        let x = -32;
+
+        while(x < 33) {
+            let X[i] = x;
+
+            let f_x = Graph.f(x);
+
+            if ((f_x > -33) & (f_x < 33)) {
+                let Y[i] = f_x;
+                do Screen.drawPixel(128 + x, 128 - f_x);
+            }
+
+            let x = x + 1;
+            let i = i + 1;
+        }
+
+        let i = 0;
+
+        while(i < 64) {
+            if ((Y[i] = Graph.f(X[i])) & (Y[i + 1] = Graph.f(X[i + 1]))) {
+                do Screen.drawLine(128 + X[i], 128 - Y[i], 128 + X[i + 1], 128 - Y[i + 1]);
+            }
+
+            let i = i + 1;
+        }
+
+        return;
+    }
+}

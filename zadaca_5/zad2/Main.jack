@@ -1,0 +1,61 @@
+class Main {
+
+    function void main() {
+        var Vint vecA, vecB;
+
+        let vecA = Vint.new(3);
+        let vecB = Vint.new(3);
+
+        do vecA.printVec();
+        do vecB.printVec();
+
+        do Output.printInt(vecA.len());
+        do Output.println();
+
+        do Output.printInt(vecB.len());
+        do Output.println();
+
+        do vecA.set(0, 1);
+        do vecA.set(1, 2);
+        do vecA.set(2, 3);
+        do vecA.set(100, 3);
+        do vecA.set(-2, 2);
+
+        do vecB.set(0, 3);
+        do vecB.set(1, 2);
+        do vecB.set(2, 1);
+        do vecB.set(-21, 1);
+
+        do vecA.printVec();
+        do vecB.printVec();
+
+        do vecA.resize(2);
+        do vecA.printVec();
+
+        do Output.printInt(vecA.get(10));
+        do Output.println();
+
+        do Output.printInt(vecA.get(-7));
+        do Output.println();
+
+        do Output.printInt(vecB.get(0));
+        do Output.println();
+
+        do Output.printInt(vecB.get(-1));
+        do Output.println();
+
+        if (Vint.is_eq(vecA, vecB) = false)
+        {
+            do Output.printString("polja nisu jednaka");
+            do Output.println();
+        }
+
+        if (Vint.elems(vecA, vecB) = true)
+        {
+            do Output.printString("polja imaju iste elemente ne nuzno na istim vrijednostima");
+            do Output.println();
+        }
+
+        return;
+    }
+}
