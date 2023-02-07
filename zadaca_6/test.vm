@@ -1,0 +1,180 @@
+<test.xml>
+<class>
+  <keyword> class </keyword>
+  <identifier> Square </identifier>
+  <symbol> { </symbol>
+  <classVarDec>
+    <keyword> static </keyword>
+    <keyword> int </keyword>
+    <identifier> i </identifier>
+    <symbol> , </symbol>
+    <identifier> j </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword> field </keyword>
+    <keyword> char </keyword>
+    <identifier> c </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword> static </keyword>
+    <identifier> string </identifier>
+    <identifier> s </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword> field </keyword>
+    <keyword> boolean </keyword>
+    <identifier> u </identifier>
+    <symbol> , </symbol>
+    <identifier> v </identifier>
+    <symbol> , </symbol>
+    <identifier> w </identifier>
+    <symbol> , </symbol>
+    <identifier> x </identifier>
+    <symbol> , </symbol>
+    <identifier> y </identifier>
+    <symbol> , </symbol>
+    <identifier> z </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier> test </identifier>
+    <symbol> ( </symbol>
+    <keyword> int </keyword>
+    <identifier> a </identifier>
+    <symbol> , </symbol>
+    <keyword> int </keyword>
+    <identifier> b </identifier>
+    <symbol> , </symbol>
+    <keyword> char </keyword>
+    <identifier> ctest </identifier>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <localVarDec>
+        <keyword> var </keyword>
+        <keyword> int </keyword>
+        <identifier> a </identifier>
+        <symbol> , </symbol>
+        <identifier> b </identifier>
+        <symbol> , </symbol>
+        <identifier> c </identifier>
+        <symbol> ; </symbol>
+      </localVarDec>
+      <localVarDec>
+        <keyword> var </keyword>
+        <identifier> Array </identifier>
+        <identifier> A </identifier>
+        <symbol> , </symbol>
+        <identifier> B </identifier>
+        <symbol> , </symbol>
+        <identifier> C </identifier>
+        <symbol> ; </symbol>
+      </localVarDec>
+      <statements>
+        <let-statement>
+          <keyword> let </keyword>
+          <term>
+            <identifier> a </identifier>
+          </term>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <integerConstant> 1000 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </let-statement>
+        <let-statement>
+          <keyword> let </keyword>
+          <term>
+            <identifier> b </identifier>
+          </term>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <symbol> - </symbol>
+              <term>
+                <integerConstant> 10 </integerConstant>
+              </term>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </let-statement>
+        <let-statement>
+          <keyword> let </keyword>
+          <term>
+            <identifier> c </identifier>
+          </term>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <integerConstant> 32767 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </let-statement>
+        <let-statement>
+          <keyword> let </keyword>
+          <term>
+            <identifier> A </identifier>
+            <symbol> [ </symbol>
+            <expression>
+              <term>
+                <integerConstant> 0 </integerConstant>
+              </term>
+            </expression>
+            <symbol> ] </symbol>
+          </term>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <integerConstant> 1 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </let-statement>
+        <do-statement>
+          <keyword> do </keyword>
+          <identifier> Output </identifier>
+          <symbol> . </symbol>
+          <identifier> printString </identifier>
+          <symbol> ( </symbol>
+          <expression-list>
+            <expression>
+              <term>
+                <stringConstant> alo </stringConstant>
+              </term>
+            </expression>
+          </expression-list>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </do-statement>
+        <return-statement>
+          <keyword> return </keyword>
+          <term>
+            <symbol> ( </symbol>
+            <expression>
+              <term>
+                <identifier> a </identifier>
+              </term>
+              <symbol> + </symbol>
+              <term>
+                <identifier> b </identifier>
+              </term>
+            </expression>
+            <symbol> ) </symbol>
+          </term>
+          <symbol> ; </symbol>
+        </return-statement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol> } </symbol>
+</class>
+</test.xml>

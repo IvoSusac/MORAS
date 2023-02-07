@@ -1,0 +1,29 @@
+/*
+	Square game.
+   
+*/
+
+class Square
+{
+	static int i, j;
+	field char c;
+	static string s;
+	field boolean u, v, w, x, y, z;
+    
+    
+    method void test(int a, int b, char ctest)
+	{
+        var int a, b, c;
+        var Array A, B, C;
+
+		let a = 1000;
+		let b = -10;
+		let c = 32767;
+		let A[0] = 1;
+
+        do Output.printString("alo");
+		
+		return (a + b);
+	}
+
+}

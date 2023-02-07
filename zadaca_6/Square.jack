@@ -1,0 +1,104 @@
+/*
+	Square game.
+   
+*/
+
+class Square
+{
+	field int x, y, s;
+	field int vx, vy;
+
+	constructor Square new()
+	{
+		let s = 16;
+		let x = 240;
+		let y = 112;
+		let vx = 0;
+		let vy = 0;
+		do draw(true);
+		return this;
+	}
+	
+	method void move()
+	{
+		if (~(vx = 0)) 
+		{
+			if ((x + vx > 0) & (x + s + vx < 512))
+			{
+				do draw(false);
+				let x = x + vx;
+				do draw(true);
+			}
+		}
+		if (~(vy = 0))
+		{
+			if ((y + vy > 0) & (y + s + vy < 255))
+			{
+				do draw(false);
+				let y = y + vy;
+				do draw(true);
+			}
+		}
+		return;
+	}
+	
+	method void grow()
+	{
+		if (((y + s) < 255) & ((x + s) < 511))
+		{
+			do draw(false);
+			let s = s + 1;
+			do draw(true);
+		}
+		return;
+	}
+	
+	method void shrink()
+	{
+		if (s > 2)
+		{
+			do draw(false);
+			let s = s - 1;
+			do draw(true);
+		}
+		return;
+	}
+	
+	method void draw(bool color)
+	{
+		do Screen.setColor(color);
+		do Screen.drawRectangle(x, y, x + s, y + s);
+		return;
+	}
+	
+	method void run() 
+	{
+		var char k;
+		let k = 0;
+	  
+		while (~(k = 81)) // q
+		{
+			while (k = 0) 
+			{
+				let k = Keyboard.keyPressed();
+				do move();
+				do Sys.wait(5);
+			}			
+			if (k = 90)  { do shrink(); } 	          // z 
+			if (k = 88)  { do grow(); }               // x 
+			if (k = 131) { let vy = -1; let vx = 0; } // up arrow
+			if (k = 133) { let vy =  1; let vx = 0; } // down arrow
+			if (k = 130) { let vx = -1; let vy = 0; } // left arrow
+			if (k = 132) { let vx =  1; let vy = 0; } // right arrow
+			let k = 0;
+		}
+		
+		return;
+	}
+	
+	method void dispose()
+	{
+		do Memory.deAlloc(this);
+		return;
+	}
+}
