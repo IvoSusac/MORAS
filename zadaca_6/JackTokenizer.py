@@ -231,7 +231,7 @@ class Tokenizer:
             if c in numberChars:
                 ret = ret * 10 + int(c)
             else:
-                if c in ';)] ':
+                if c in ';)], ':
                     break
                 raise JackError('Syntax error in line ' + str(self._lineNum) + ': number is not a valid integer.')
             if ret >= 32768:
